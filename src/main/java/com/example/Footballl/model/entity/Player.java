@@ -10,12 +10,13 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String firstname;
-    private String lastname;
-    private int age;
-    private String email;
+    private String name;
+    private Integer age;
+    private String position;
+    private String club;
+    private Double transferValue;
 }
