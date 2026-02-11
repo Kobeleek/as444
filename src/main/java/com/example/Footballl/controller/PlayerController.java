@@ -24,7 +24,7 @@ public class PlayerController {
         return ResponseEntity.ok(playerService.create(dto));
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public ResponseEntity<PlayerDTO> getByID(@PathVariable Long id) {
         return ResponseEntity.ok(playerService.getByID(id));
     }

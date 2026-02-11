@@ -1,5 +1,6 @@
 package com.example.Footballl.model.dto;
 
+import jakarta.persistence.Column;
 import lombok.*;
 
 @Data

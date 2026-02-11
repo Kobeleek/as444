@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "players")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,6 +17,8 @@ public class Player {
     private String name;
     private Integer age;
     private String position;
+    @Column(name = "club")
     private String club;
+    @Column(name = "transfervalue")
     private Double transferValue;
 }

@@ -3,7 +3,7 @@ package com.example.Footballl.service.impl;
 import com.example.Footballl.model.dto.PlayerDTO;
 import com.example.Footballl.model.entity.Player;
 import com.example.Footballl.repository.PlayerRepository;
-import com.example.Footballl.service.PlayerService;
+import com.example.Footballl.service.impl.PlayerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class PlayerServiceImpl implements PlayerService {
+public class PlayerServiceimpl implements PlayerService {
 
     private final PlayerRepository playerRepository;
 
@@ -46,10 +46,8 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public PlayerDTO getById(Long id) {
-        Player player = playerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Player not found with id: " + id));
-        return mapToDTO(player);
+    public PlayerDTO getByID(Long id) {
+        return mapToDTO(playerRepository.findById(id).orElseThrow(() -> new RuntimeException("Player not found")));
     }
 
     @Override
